@@ -1,0 +1,9 @@
+a simple serial sniffer for jennic modules. Returns the MAC_RxFrame_s struct
+from jennics Ieee802.15.4, which contains a cropped mac packet.
+
+Configuration is done by sending the channel number and a newline over the
+serial port. An example pc programm is contained in sniff.py.
+
+Special note for ftdi-based designs with custom usb ids, load the ftdi_sio
+serial driver with:
+ sudo modprobe ftdi_sio vendor=0x0403 product=0xcc40
