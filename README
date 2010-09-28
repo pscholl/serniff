@@ -1,5 +1,8 @@
-a simple serial sniffer for jennic modules. Returns the MAC_RxFrame_s struct
-from jennics Ieee802.15.4, which contains a cropped mac packet.
+a simple serial sniffer for jennic modules. Returns the MAC_RxFrameData_s struct
+from jennics Ieee802.15.4 mac layer, which contains a cropped mac packet. The
+payload of the MAC_RxFrameData_s does not only contain the raw data of a packet,
+but also its raw header, so a full-sized packet won't fit into MAC_RxFrameData_s
+and the last few bytes of the payload will be missing.
 
 Configuration is done by sending the channel number and a newline over the
 serial port. An example pc programm is contained in sniff.py.
